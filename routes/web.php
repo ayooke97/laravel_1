@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiswaController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,10 @@ Route::get('/main', function () {
     return view('main');
 });
 
-Route::resource('siswa', SiswaController::class);
+// Route::resource('mhs', SiswaController::class)->names('siswa');
+Route::resource('siswa', SiswaController::class)->names('siswa');
 // Route::get('/siswa', [SiswaController::class, 'index']);
+
+
+
+

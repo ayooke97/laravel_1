@@ -18,6 +18,16 @@
     <label>Alamat</label>
     <textarea class="form-control @error('alamat') is-invalid @enderror" rows="5" name="alamat">{{ old('alamat') }}</textarea>
   </div>
+
+   <div class="form-group">
+    <label>Alamat Sekolah</label>
+    <select name="sekolah_id" id="">
+    @foreach ($data as $d)
+        <option value="{{ $d->id }}">{{ $d->nama_sekolah }}</option>
+    @endforeach
+    </select>
+  </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

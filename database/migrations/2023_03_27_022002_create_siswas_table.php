@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
-            $table->integer('nis');
+            $table->integer('nis')->unique();
             $table->string('nama');
             $table->text('alamat');
+            $table->foreignId('sekolah_id')->constrained('sekolah')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
